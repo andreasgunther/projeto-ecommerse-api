@@ -46,7 +46,7 @@ Uso do **SQLAlchemy (ORM)** para realizar a comunicação entre Flask e SQLite.
 1. Clonar o repositório
 
 ```sh
-git clone [https://github.com/seu-usuario/ecommerce-api.git](https://github.com/seu-usuario/ecommerce-api.git)
+git clone [https://github.com/andreasgunther/projeto-ecommerce-api.git](https://github.com/seu-usuario/ecommerce-api.git)
 cd ecommerce-api
 ```
 
