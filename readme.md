@@ -74,3 +74,41 @@ python3 seed.py
 ```sh
 python3 run.py
 ```
+
+## Recursos da API
+
+Todas as requisições privadas exigem um cookie de sessão ativo (gerado após o login).
+
+### Autenticação e Usuários
+| Método | Endpoint | Descrição | Acesso |
+| :--- | :--- | :--- | :--- |
+| `POST` | `/login` | Autentica o usuário e inicia sessão | Público |
+| `POST` | `/logout` | Encerra a sessão ativa | Privado |
+
+### Catálogo de Produtos
+| Método | Endpoint | Descrição | Acesso |
+| :--- | :--- | :--- | :--- |
+| `GET` | `/api/products` | Lista todos os produtos cadastrados | Público |
+| `GET` | `/api/products/<id>` | Detalhes de um produto específico | Público |
+| `POST` | `/api/products/add` | Cadastra um novo produto | Privado |
+| `PUT` | `/api/products/update/<id>` | Atualiza dados do produto | Privado |
+| `DELETE` | `/api/products/delete/<id>` | Remove um produto do catálogo | Privado |
+
+### Carrinho e Checkout
+| Método | Endpoint | Descrição | Acesso |
+| :--- | :--- | :--- | :--- |
+| `GET` | `/api/cart` | Visualiza itens no carrinho | Privado |
+| `POST` | `/api/cart/add/<id>` | Adiciona produto ao carrinho | Privado |
+| `DELETE` | `/api/cart/remove/<id>` | Remove item específico do carrinho | Privado |
+| `POST` | `/api/cart/checkout` | Finaliza a compra e limpa o carrinho | Privado |
+
+### Exemplo de Requisição (JSON)
+
+Para adicionar um produto, envie um `POST` para `/api/products/add` com o seguinte corpo:
+
+```json
+{
+    "name": "Teclado Mecanico",
+    "price": 120.00,
+    "description": "De Plastico"
+}
